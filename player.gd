@@ -1,6 +1,11 @@
 extends Sprite2D
 
-const MAX_COOLDOWN = 0.01
+@export var start_temp: int
+
+@onready var temperature = start_temp
+
+# Movement cooldown
+const MAX_COOLDOWN = 0.005
 var cooldown = 0
 
 func _process(delta: float) -> void:
