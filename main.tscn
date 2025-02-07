@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://dr8nqg74dw7ab"]
 
-[ext_resource type="Texture2D" uid="uid://cd6bvqsrtx2go" path="res://textures/icon.svg" id="1_xpwlw"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_bswu6"]
+[ext_resource type="Texture2D" uid="uid://cj4o2hd0i8dyg" path="res://textures/LittleGuy.png" id="2_i452h"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yeod1")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(338, 167)
-texture = ExtResource("1_xpwlw")
+texture = ExtResource("2_i452h")
 script = ExtResource("2_bswu6")
