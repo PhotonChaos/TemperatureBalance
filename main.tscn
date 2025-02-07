@@ -8,6 +8,6 @@
 script = ExtResource("1_yeod1")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(338, 167)
+position = Vector2(8, 8)
 texture = ExtResource("2_i452h")
 script = ExtResource("2_bswu6")
