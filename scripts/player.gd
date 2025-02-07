@@ -34,14 +34,14 @@ func _input(event: InputEvent) -> void:
 		return
 		
 	if event.is_action_pressed("move_up"):
-		position.y -= 10
+		position.y -= 16
 		cooldown += MAX_COOLDOWN
 	elif event.is_action_pressed("move_down", false):
-		position.y += 10
+		position.y += 16
 		cooldown += MAX_COOLDOWN
 	elif event.is_action_pressed("move_left", false):
-		position.x -= 10
+		position.x -= 16
 		cooldown += MAX_COOLDOWN
 	elif event.is_action_pressed("move_right", false):
-		position.x += 10
+		position.x += 16
 		cooldown += MAX_COOLDOWN
