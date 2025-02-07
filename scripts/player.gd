@@ -6,6 +6,8 @@ signal temp_updated(new_temp)
 @export var start_temp: int
 
 @onready var temperature = start_temp
+@onready var cell_x = 0
+@onready var cell_y = 0
 
 # Movement cooldown
 const MAX_COOLDOWN = 0.005
@@ -14,6 +16,11 @@ var cooldown = 0
 func add_temp(t: int) -> void:
 	temperature += t
 	temp_updated.emit(temperature)
+
+# To be called by the level when it loads in.
+func set_cell_position(x: int, y: int) -> void:
+	cell_x = x
+	cell_y = y
 
 func _process(delta: float) -> void:
 	cooldown -= delta
