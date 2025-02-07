@@ -2,6 +2,7 @@ class_name Player
 extends Sprite2D
 
 signal temp_updated(new_temp)
+signal move(new_x, new_y)
 
 @export var start_temp: int
 
