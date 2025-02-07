@@ -1,4 +1,7 @@
+class_name Player
 extends Sprite2D
+
+signal temp_updated(new_temp)
 
 @export var start_temp: int
 
@@ -7,6 +10,10 @@ extends Sprite2D
 # Movement cooldown
 const MAX_COOLDOWN = 0.005
 var cooldown = 0
+
+func add_temp(t: int) -> void:
+	temperature += t
+	temp_updated.emit(temperature)
 
 func _process(delta: float) -> void:
 	cooldown -= delta
