@@ -64,7 +64,6 @@ func _ready() -> void:
 	add_child(player_ref)
 	
 	player_ref.position = Vector2(player_start.position.x * 16 + 8, player_start.position.y * 16 + 8)
-	
 	player_cell_x = player_start.position.x
 	player_cell_y = player_start.position.y
 	
@@ -74,22 +73,25 @@ func _ready() -> void:
 	player_ref.request_move.connect(handle_move_request)
 	player_ref.moved.connect(handle_tile_effects)
 	player_ref.retry.connect(func(): loss.emit())
-	print("Loaded", level_name)
 	
+	print("Loaded", level_name)
 
 ## Event Methods
 func handle_move_request(x_dst, y_dst):
 	var new_x = player_cell_x + x_dst
 	var new_y = player_cell_y + y_dst
 	
+	# Don't let the player get out of bounds
 	if not (0 <= new_y and new_y <= 21):
 		return
 	
 	if not (0 <= new_x and new_x <= 39):
 		return
 	
+	# Check for walls
 	if get_tile_type(new_x, new_y) == TileType.CONCRETE:
-		return # Use concrete as a wall for now
+		handle_tile_effects() # This is for ice mechanics.
+		return
 
 	player_cell_x += x_dst
 	player_cell_y += y_dst
@@ -104,7 +106,16 @@ func handle_tile_effects():
 			else:
 				# Player sinks if they aren't cold enough
 				loss.emit()
-
+		
+		TileType.ICE:
+			player_ref.forced_move = player_ref.MoveDir.LEFT
+			player_ref.cooldown = player_ref.MAX_COOLDOWN * 10
+			
+			if player_ref.temperature > 0:
+				player_ref.add_temp(-1)
+				set_tile(player_cell_x, player_cell_y, TileType.WATER)
+		
+		
 		TileType.SNOWFLAKE:
 			player_ref.add_temp(-1)
 			level_tilemap.erase_cell(Vector2i(player_cell_x, player_cell_y))
