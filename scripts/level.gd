@@ -16,7 +16,7 @@ var player_ref: Player
 var player_cell_x = 0
 var player_cell_y = 0
 
-# TODO: Assign these to tilemap identifiers (maybe file name?)
+# These should  be in the same order as the tiles in the level TileSet
 enum TileType {
 	AIR = -1,
 	CONCRETE,
@@ -24,7 +24,7 @@ enum TileType {
 	GRASS,
 	ICE,
 	FIRE,
-	SNOW
+	SNOWFLAKE
 }
 
 ## Helper Methods
@@ -92,9 +92,11 @@ func handle_move_request(x_dst, y_dst):
 
 func handle_tile_effects():
 	match get_tile_type(player_cell_x, player_cell_y):
-		TileType.SNOW:
+		TileType.SNOWFLAKE:
 			player_ref.add_temp(-1)
+			level_tilemap.erase_cell(Vector2i(player_cell_x, player_cell_y))
 		TileType.FIRE:
 			player_ref.add_temp(1)
+			level_tilemap.erase_cell(Vector2i(player_cell_x, player_cell_y))
 			
 	

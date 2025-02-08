@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b7ntsqeifctm0" path="res://textures/Ice.png" id="5_wknhe"]
 [ext_resource type="TileSet" uid="uid://bmn3sy6b1w8dl" path="res://textures/level_player_tiles.tres" id="6_i544d"]
 [ext_resource type="Texture2D" uid="uid://bv1udgve7mtgl" path="res://textures/Flame-Sheet.png" id="7_xsd87"]
-[ext_resource type="Texture2D" uid="uid://bqv2j1dcu6qk6" path="res://textures/Snowflake-Sheet.png" id="8_3e0fx"]
+[ext_resource type="Texture2D" uid="uid://bixwkbeij6sig" path="res://textures/Snowflake-Sheet.png" id="8_3e0fx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mudnd"]
 resource_name = "Concrete"
