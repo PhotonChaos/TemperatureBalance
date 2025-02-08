@@ -1,13 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr8nqg74dw7ab"]
+[gd_scene load_steps=3 format=3 uid="uid://dr8nqg74dw7ab"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="2_bswu6"]
-[ext_resource type="Texture2D" uid="uid://cj4o2hd0i8dyg" path="res://textures/LittleGuy.png" id="2_i452h"]
+[ext_resource type="PackedScene" uid="uid://ce47jnwu70pcx" path="res://Level.tscn" id="2_bh3j1"]
 
-[node name="Node2D" type="Node2D"]
+[node name="MainGame" type="Node2D"]
 script = ExtResource("1_yeod1")
-
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(8, 8)
-texture = ExtResource("2_i452h")
-script = ExtResource("2_bswu6")
+levels = Array[PackedScene]([ExtResource("2_bh3j1")])

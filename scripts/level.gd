@@ -6,10 +6,12 @@ signal loss
 
 @export var level_name: String
 @export var player: Player
-@export var layout: TileMap
 
-@onready var player_ref = $Player as Player
-@onready var tilemap_ref = $Layout as TileMap
+@onready var level_tilemap = $LevelLayer as TileMap
+@onready var player_tilemap = $PlayerLayer as TileMap
+
+# This is set on level startup by reading the tilemap
+var player_ref: Player
 
 # TODO: Assign these to tilemap identifiers (maybe file name?)
 enum TileType {
@@ -35,11 +37,11 @@ func get_tile_type(pos: Vector2) -> TileType:
 func _ready() -> void:
 	var valid = true
 	
-	if not is_instance_valid(player_ref):
+	if not is_instance_valid(player_tilemap):
 		print("[color=red]ERROR: Missing player as child object. Make sure the player node is named 'Player'![/color]")
 		valid = false
 	
-	if not is_instance_valid(tilemap_ref):
+	if not is_instance_valid(level_tilemap):
 		print("[color=red]ERROR: Missing layout Tilemap child object. Make sure the map node is named 'Layout'![/color]")
 		valid = false
 	

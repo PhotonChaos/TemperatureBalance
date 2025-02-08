@@ -5,6 +5,7 @@ signal temp_updated(new_temp)
 signal move(new_x, new_y)
 
 @export var start_temp: int
+@export var move_dist: int = 16
 
 @onready var temperature = start_temp
 @onready var cell_x = 0
@@ -16,6 +17,7 @@ var cooldown = 0
 
 func add_temp(t: int) -> void:
 	temperature += t
+	print("Temperature", temperature - t, "->", temperature)
 	temp_updated.emit(temperature)
 
 # To be called by the level when it loads in.
@@ -34,14 +36,14 @@ func _input(event: InputEvent) -> void:
 		return
 		
 	if event.is_action_pressed("move_up"):
-		position.y -= 16
+		position.y -= move_dist
 		cooldown += MAX_COOLDOWN
-	elif event.is_action_pressed("move_down", false):
-		position.y += 16
+	elif event.is_action_pressed("move_down"):
+		position.y += move_dist
 		cooldown += MAX_COOLDOWN
-	elif event.is_action_pressed("move_left", false):
-		position.x -= 16
+	elif event.is_action_pressed("move_left"):
+		position.x -= move_dist
 		cooldown += MAX_COOLDOWN
-	elif event.is_action_pressed("move_right", false):
-		position.x += 16
+	elif event.is_action_pressed("move_right"):
+		position.x += move_dist
 		cooldown += MAX_COOLDOWN
