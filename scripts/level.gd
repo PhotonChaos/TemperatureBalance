@@ -22,7 +22,9 @@ enum TileType {
 	CONCRETE,
 	DIRT,
 	GRASS,
-	ICE
+	ICE,
+	FIRE,
+	SNOW
 }
 
 ## Helper Methods
@@ -90,7 +92,9 @@ func handle_move_request(x_dst, y_dst):
 
 func handle_tile_effects():
 	match get_tile_type(player_cell_x, player_cell_y):
-		TileType.ICE:
+		TileType.SNOW:
 			player_ref.add_temp(-1)
+		TileType.FIRE:
+			player_ref.add_temp(1)
 			
 	
