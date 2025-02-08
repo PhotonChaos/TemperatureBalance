@@ -24,7 +24,8 @@ enum TileType {
 	GRASS,
 	ICE,
 	FIRE,
-	SNOWFLAKE
+	SNOWFLAKE,
+	WATER
 }
 
 ## Helper Methods
