@@ -68,6 +68,7 @@ func _ready() -> void:
 	player_ref.request_move.connect(handle_move_request)
 	player_ref.moved.connect(handle_tile_effects)
 	print("Loaded", level_name)
+	
 
 ## Event Methods
 func handle_move_request(x_dst, y_dst):
