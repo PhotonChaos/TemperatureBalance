@@ -4,6 +4,9 @@ extends Node2D
 
 @export var levels: Array[PackedScene]
 
+# for testing purposes
+@export var level_test_index: int
+
 var current_level = null
 
 # TODO:
@@ -24,7 +27,7 @@ func _ready() -> void:
 		print("ERROR: No levels specified!")
 		return
 	
-	current_level = levels[0].instantiate()
+	current_level = levels[level_test_index].instantiate()
 	add_child(current_level)
 	
 	$SoundtrackHandler.attachPlayer(current_level.player_ref)

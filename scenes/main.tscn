@@ -1,0 +1,17 @@
+[gd_scene load_steps=9 format=3 uid="uid://dr8nqg74dw7ab"]
+
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
+[ext_resource type="PackedScene" uid="uid://ce47jnwu70pcx" path="res://scenes/levels/Level.tscn" id="2_bh3j1"]
+[ext_resource type="PackedScene" uid="uid://jd5cgvb7yxe3" path="res://scenes/levels/Tutorial1.tscn" id="3_bkkma"]
+[ext_resource type="PackedScene" uid="uid://bc37k85l8nwda" path="res://audio/soundtrack/SoundtrackHandler.tscn" id="3_j0vxa"]
+[ext_resource type="PackedScene" uid="uid://c6wto50p85h42" path="res://scenes/levels/Tutorial2.tscn" id="4_ncwfd"]
+[ext_resource type="PackedScene" uid="uid://dxmhjfbwfb6gm" path="res://scenes/levels/Tutorial3.tscn" id="5_jamrn"]
+[ext_resource type="PackedScene" uid="uid://bjdag3d8dtyo0" path="res://scenes/levels/Challenge1.tscn" id="6_tnap7"]
+[ext_resource type="PackedScene" uid="uid://c0e45rx2qtbde" path="res://scenes/levels/Challenge2.tscn" id="7_12tus"]
+
+[node name="MainGame" type="Node2D"]
+script = ExtResource("1_yeod1")
+levels = Array[PackedScene]([ExtResource("2_bh3j1"), ExtResource("3_bkkma"), ExtResource("4_ncwfd"), ExtResource("5_jamrn"), ExtResource("6_tnap7"), ExtResource("7_12tus")])
+level_test_index = 5
+
+[node name="SoundtrackHandler" parent="." instance=ExtResource("3_j0vxa")]
