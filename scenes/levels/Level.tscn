@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://ce47jnwu70pcx"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_d7yu2"]
-[ext_resource type="PackedScene" uid="uid://cvduu42wfa3t4" path="res://player.tscn" id="2_k4dkn"]
+[ext_resource type="PackedScene" uid="uid://cvduu42wfa3t4" path="res://scenes/player.tscn" id="2_k4dkn"]
 [ext_resource type="Texture2D" uid="uid://d3sxfj2xq82x7" path="res://textures/Dirt.png" id="3_c60es"]
 [ext_resource type="Texture2D" uid="uid://sv486du6q603" path="res://textures/Grass.png" id="4_ml36j"]
 [ext_resource type="Texture2D" uid="uid://b7ntsqeifctm0" path="res://textures/Ice.png" id="5_wknhe"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c640en3hfl6lm" path="res://textures/Tilesheet.png" id="10_3pwwc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jp5p3"]
+resource_name = "Concrete"
 texture = ExtResource("10_3pwwc")
 0:0/0 = 0
 0:0/0/terrain_set = 0

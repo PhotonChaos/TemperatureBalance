@@ -3,6 +3,7 @@ extends Node2D
 # Main game script, should handle the highest level logic
 
 @export var levels: Array[PackedScene]
+@export var level_test_index: int
 
 var current_level_id: int = 0
 var current_level: Level = null
@@ -46,11 +47,13 @@ func _ready() -> void:
 	# for now, just load level 1. 
 	# TODO: Load main menu
 	
+	current_level_id = level_test_index
+
 	if len(levels) == 0:
 		print("ERROR: No levels specified!")
 		return
 	
-	current_level = levels[0].instantiate()
+	current_level = levels[current_level_id].instantiate()
 	add_child(current_level)
 	
 	$SoundtrackHandler.attachPlayer(current_level.player_ref)
