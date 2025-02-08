@@ -32,6 +32,9 @@ enum TileType {
 func get_tile_type(x: int, y: int) -> TileType:
 	return level_tilemap.get_cell_source_id(Vector2i(x, y))
 
+func set_tile(x: int, y: int, type: TileType) -> void:
+	level_tilemap.set_cell(Vector2i(x,y), 1)
+
 ## Standard Methods
 func _ready() -> void:
 	var valid = true
@@ -93,9 +96,18 @@ func handle_move_request(x_dst, y_dst):
 
 func handle_tile_effects():
 	match get_tile_type(player_cell_x, player_cell_y):
+		TileType.WATER:
+			if player_ref.temperature < 0:
+				player_ref.add_temp(1)
+				set_tile(player_cell_x, player_cell_y, TileType.ICE)
+			else:
+				# Player sinks if they aren't cold enough
+				loss.emit()
+
 		TileType.SNOWFLAKE:
 			player_ref.add_temp(-1)
 			level_tilemap.erase_cell(Vector2i(player_cell_x, player_cell_y))
+		
 		TileType.FIRE:
 			player_ref.add_temp(1)
 			level_tilemap.erase_cell(Vector2i(player_cell_x, player_cell_y))
