@@ -2,14 +2,15 @@ class_name Player
 extends Sprite2D
 
 signal temp_updated(new_temp)
-signal move(new_x, new_y)
+
+# dst_x and dst_y are in cells
+signal request_move(dst_x, dst_y)
+signal moved
 
 @export var start_temp: int
 @export var move_dist: int = 16
 
 @onready var temperature = start_temp
-@onready var cell_x = 0
-@onready var cell_y = 0
 
 # Movement cooldown
 const MAX_COOLDOWN = 0.005
@@ -17,13 +18,15 @@ var cooldown = 0
 
 func add_temp(t: int) -> void:
 	temperature += t
-	print("Temperature", temperature - t, "->", temperature)
+	print("Temperature ", temperature - t, " -> ", temperature)
 	temp_updated.emit(temperature)
 
-# To be called by the level when it loads in.
-func set_cell_position(x: int, y: int) -> void:
-	cell_x = x
-	cell_y = y
+# Called by Level
+func move(xdst, ydst):
+	position.x += xdst
+	position.y += ydst
+	moved.emit()
+
 
 func _process(delta: float) -> void:
 	cooldown -= delta
@@ -31,19 +34,20 @@ func _process(delta: float) -> void:
 	if cooldown < 0:
 		cooldown = 0
 
+
 func _input(event: InputEvent) -> void:
 	if cooldown > 0:
 		return
 		
 	if event.is_action_pressed("move_up"):
-		position.y -= move_dist
-		cooldown += MAX_COOLDOWN
+		request_move.emit(0, -1)
 	elif event.is_action_pressed("move_down"):
-		position.y += move_dist
-		cooldown += MAX_COOLDOWN
+		request_move.emit(0, 1)
 	elif event.is_action_pressed("move_left"):
-		position.x -= move_dist
-		cooldown += MAX_COOLDOWN
+		request_move.emit(-1, 0)
 	elif event.is_action_pressed("move_right"):
-		position.x += move_dist
-		cooldown += MAX_COOLDOWN
+		request_move.emit(1, 0)
+	else:
+		return
+	
+	cooldown += MAX_COOLDOWN

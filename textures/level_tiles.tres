@@ -1,3 +1,32 @@
-[gd_resource type="TileSet" format=3 uid="uid://fmwtukmj00o0"]
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://fmwtukmj00o0"]
+
+[ext_resource type="Texture2D" uid="uid://dipmtp8tbets6" path="res://textures/Concrete.png" id="1_sufcc"]
+[ext_resource type="Texture2D" uid="uid://d3sxfj2xq82x7" path="res://textures/Dirt.png" id="2_m14p8"]
+[ext_resource type="Texture2D" uid="uid://sv486du6q603" path="res://textures/Grass.png" id="3_ut7ql"]
+[ext_resource type="Texture2D" uid="uid://b7ntsqeifctm0" path="res://textures/Ice.png" id="4_f1lmt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mudnd"]
+resource_name = "Concrete"
+texture = ExtResource("1_sufcc")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edfh0"]
+resource_name = "Dirt"
+texture = ExtResource("2_m14p8")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwjse"]
+resource_name = "Grass"
+texture = ExtResource("3_ut7ql")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m23w1"]
+resource_name = "Ice"
+texture = ExtResource("4_f1lmt")
+0:0/0 = 0
 
 [resource]
+sources/0 = SubResource("TileSetAtlasSource_mudnd")
+sources/1 = SubResource("TileSetAtlasSource_edfh0")
+sources/2 = SubResource("TileSetAtlasSource_qwjse")
+sources/3 = SubResource("TileSetAtlasSource_m23w1")
