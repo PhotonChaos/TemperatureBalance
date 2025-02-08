@@ -60,7 +60,7 @@ func _ready() -> void:
 	player_ref = player_template.instantiate()
 	add_child(player_ref)
 	
-	player_ref.position = Vector2(player_start.position.x + 1, player_start.position.y + 6)
+	player_ref.position = Vector2(player_start.position.x * 16 + 8, player_start.position.y * 16 + 8)
 	
 	player_tilemap.hide()
 	

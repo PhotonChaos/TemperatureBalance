@@ -21,7 +21,7 @@ func _ready() -> void:
 	# TODO: Load main menu
 	
 	if len(levels) == 0:
-		print("[color=red]ERROR: No levels specified![/color]")
+		print("ERROR: No levels specified!")
 		return
 	
 	current_level = levels[0].instantiate()
