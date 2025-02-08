@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6o1prkrwh8bx"]
+
+[ext_resource type="AudioStream" uid="uid://cjp3tq2ffva1f" path="res://audio/effects/DeathSound.wav" id="1_x30rq"]
+[ext_resource type="Script" path="res://audio/effects/sfx_handler.gd" id="2_wvot4"]
+
+[node name="DeathSfxHandler" type="AudioStreamPlayer"]
+stream = ExtResource("1_x30rq")
+script = ExtResource("2_wvot4")

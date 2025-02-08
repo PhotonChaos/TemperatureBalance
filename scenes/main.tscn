@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr8nqg74dw7ab"]
+[gd_scene load_steps=11 format=3 uid="uid://dr8nqg74dw7ab"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
 [ext_resource type="PackedScene" uid="uid://ce47jnwu70pcx" path="res://scenes/levels/Level.tscn" id="2_bh3j1"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bjdag3d8dtyo0" path="res://scenes/levels/Challenge1.tscn" id="6_tnap7"]
 [ext_resource type="PackedScene" uid="uid://c0e45rx2qtbde" path="res://scenes/levels/Challenge2.tscn" id="7_12tus"]
 [ext_resource type="PackedScene" uid="uid://caa2futy5kh05" path="res://scenes/thermometer.tscn" id="9_kc3wl"]
+[ext_resource type="PackedScene" uid="uid://c6o1prkrwh8bx" path="res://audio/effects/DeathSFXHandler.tscn" id="10_2l2ee"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_yeod1")
@@ -18,3 +19,6 @@ levels = Array[PackedScene]([ExtResource("2_bh3j1"), ExtResource("3_bkkma"), Ext
 
 [node name="Thermometer" parent="." instance=ExtResource("9_kc3wl")]
 position = Vector2(320, 360)
+
+[node name="DeathSfxHandler" parent="." instance=ExtResource("10_2l2ee")]
+volume_db = -5.0
