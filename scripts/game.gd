@@ -25,6 +25,10 @@ func load_level(level_id: int):
 	
 	current_level.win.connect(level_complete)
 	current_level.loss.connect(restart_level)
+	
+	
+	$Thermometer.attachPlayer(current_level.player_ref)
+	$Thermometer.updateBar(current_level.player_ref.temperature)
 
 func unload_level():
 	remove_child(current_level)
@@ -37,6 +41,9 @@ func restart_level():
 	
 	unload_level()
 	load_level(current_level_id)
+	
+	$SoundtrackHandler.attachPlayer(current_level.player_ref)
+	$SoundtrackHandler.updateLayer(current_level.player_ref.temperature)
 	
 	print("Level ", current_level_id, " restarted.")
 
