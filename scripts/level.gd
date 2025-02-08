@@ -33,7 +33,7 @@ func get_tile_type(x: int, y: int) -> TileType:
 	return level_tilemap.get_cell_source_id(Vector2i(x, y))
 
 func set_tile(x: int, y: int, type: TileType) -> void:
-	level_tilemap.set_cell(Vector2i(x,y), 1)
+	level_tilemap.set_cell(Vector2i(x,y), type, Vector2i.ZERO, 0)
 
 ## Standard Methods
 func _ready() -> void:
