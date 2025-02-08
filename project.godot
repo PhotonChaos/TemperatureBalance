@@ -23,6 +23,10 @@ window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
+[dotnet]
+
+project/assembly_name="TemperatureBalance"
+
 [input]
 
 move_up={
