@@ -90,6 +90,7 @@ func handle_move_request(x_dst, y_dst):
 	
 	# Check for walls
 	if get_tile_type(new_x, new_y) == TileType.CONCRETE:
+		player_ref.last_move = Player.MoveDir.NONE
 		handle_tile_effects() # This is for ice mechanics.
 		return
 
@@ -108,6 +109,9 @@ func handle_tile_effects():
 				loss.emit()
 		
 		TileType.ICE:
+			if player_ref.last_move == Player.MoveDir.NONE:
+				return
+			
 			player_ref.forced_move = player_ref.last_move
 			player_ref.cooldown = player_ref.MAX_COOLDOWN * 10
 			
