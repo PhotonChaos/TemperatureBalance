@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://c6tlff3lpi3ce"
+=======
+uid="uid://bqv2j1dcu6qk6"
+>>>>>>> 4c31add1932859c4bdd5374fe0795a8c045f2c75
 path="res://.godot/imported/Snowflake-Sheet.png-d3676c784f8c5e5283888eecfcadfc79.ctex"
 metadata={
 "vram_texture": false
