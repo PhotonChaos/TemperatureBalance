@@ -26,3 +26,7 @@ func _ready() -> void:
 	
 	current_level = levels[0].instantiate()
 	add_child(current_level)
+	
+	$SoundtrackHandler.attachPlayer(current_level.player_ref)
+	$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Neutral")
+	$SoundtrackHandler.play()
