@@ -6,6 +6,7 @@ signal temp_updated(new_temp)
 # dst_x and dst_y are in cells
 signal request_move(dst_x, dst_y)
 signal moved
+signal retry
 
 @export var start_temp: int
 @export var move_dist: int = 16
@@ -47,6 +48,8 @@ func _input(event: InputEvent) -> void:
 		request_move.emit(-1, 0)
 	elif event.is_action_pressed("move_right"):
 		request_move.emit(1, 0)
+	elif event.is_action_pressed("retry"):
+		retry.emit()
 	else:
 		return
 	

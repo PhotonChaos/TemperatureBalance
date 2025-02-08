@@ -19,32 +19,35 @@ var current_level: Level = null
 # [ ] Temperature update signal handler (Maybe this goes in UI
 # [ ] Final victory screen
 
+func load_level(level_id: int):
+	current_level = levels[level_id].instantiate()
+	add_child(current_level)
+	
+	current_level.win.connect(level_complete)
+	current_level.loss.connect(restart_level)
+
+func unload_level():
+	remove_child(current_level)
+	current_level.queue_free()
+
 func restart_level():
 	if not is_instance_valid(current_level):
 		print("Tried to restart null level. ID: ", current_level_id)
 		return
 	
-	# Delete Level
-	remove_child(current_level)
-	current_level.queue_free()
-	
-	# Re-create level
+	unload_level()
 	load_level(current_level_id)
 	
 	print("Level ", current_level_id, " restarted.")
 
-func load_level(level_id: int):
-	current_level = levels[level_id].instantiate()
-	add_child(current_level)
-	
-	current_level.win.connect(level_complete())
-	current_level.loss.connect(restart_level())
-
 func level_complete():
-	pass
+	current_level_id += 1
+	unload_level()
+	load_level(current_level_id)
+	
+	
 
 func _ready() -> void:
-	# for now, just load level 1. 
 	# TODO: Load main menu
 	
 	current_level_id = level_test_index
@@ -53,8 +56,7 @@ func _ready() -> void:
 		print("ERROR: No levels specified!")
 		return
 	
-	current_level = levels[current_level_id].instantiate()
-	add_child(current_level)
+	load_level(current_level_id)
 	
 	$SoundtrackHandler.attachPlayer(current_level.player_ref)
 	$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Neutral")
