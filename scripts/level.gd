@@ -108,7 +108,7 @@ func handle_tile_effects():
 				loss.emit()
 		
 		TileType.ICE:
-			player_ref.forced_move = player_ref.MoveDir.LEFT
+			player_ref.forced_move = player_ref.last_move
 			player_ref.cooldown = player_ref.MAX_COOLDOWN * 10
 			
 			if player_ref.temperature > 0:

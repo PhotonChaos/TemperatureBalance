@@ -16,6 +16,7 @@ signal retry
 enum MoveDir { NONE, UP, DOWN, LEFT, RIGHT }
 
 var forced_move: MoveDir = MoveDir.NONE
+var last_move: MoveDir = MoveDir.NONE
 
 # Movement cooldown
 const MAX_COOLDOWN = 0.01
@@ -67,15 +68,19 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("move_up") and can_move(MoveDir.UP):
 		forced_move = MoveDir.NONE
+		last_move = MoveDir.UP
 		request_move.emit(0, -1)
 	elif event.is_action_pressed("move_down") and can_move(MoveDir.DOWN):
 		forced_move = MoveDir.NONE
+		last_move = MoveDir.DOWN
 		request_move.emit(0, 1)
 	elif event.is_action_pressed("move_left") and can_move(MoveDir.LEFT):
 		forced_move = MoveDir.NONE
+		last_move = MoveDir.LEFT
 		request_move.emit(-1, 0)
 	elif event.is_action_pressed("move_right") and can_move(MoveDir.RIGHT):
 		forced_move = MoveDir.NONE
+		last_move = MoveDir.RIGHT
 		request_move.emit(1, 0)
 	elif event.is_action_pressed("retry"):
 		retry.emit()
