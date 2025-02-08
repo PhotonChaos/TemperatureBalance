@@ -9,14 +9,14 @@ var current_level_id: int = 0
 var current_level: Level = null
 
 # TODO:
-# [ ] Main Menu
+# [x] Main Menu
 # [x] Level loading
 #   [x] Tilemap
 # [x] Success signal handler
 # [x] Death signal handler
 # [x] Restart function
-# [ ] Death restart screen (optional)
-# [ ] Temperature update signal handler (Maybe this goes in UI
+# [x] Death restart screen (optional)
+# [x] Temperature update signal handler (Maybe this goes in UI)
 # [ ] Final victory screen
 
 func load_level(level_id: int):
@@ -25,7 +25,6 @@ func load_level(level_id: int):
 	
 	current_level.win.connect(level_complete)
 	current_level.loss.connect(restart_level)
-	
 	
 	$Thermometer.attachPlayer(current_level.player_ref)
 	$Thermometer.updateBar(current_level.player_ref.temperature)
@@ -52,20 +51,25 @@ func level_complete():
 	current_level_id += 1
 	unload_level()
 	load_level(current_level_id)
+
+func start_game():
+	var menu = $MenuLayer/MainMenu
+	remove_child(menu)
+	menu.queue_free()
 	
+	$Thermometer.visible = true
+	load_level(current_level_id)
 	
+	$SoundtrackHandler.attachPlayer(current_level.player_ref)
+	$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Neutral")
+	$SoundtrackHandler.play()
 
 func _ready() -> void:
-	# TODO: Load main menu
-	
 	current_level_id = level_test_index
 
 	if len(levels) == 0:
 		print("ERROR: No levels specified!")
 		return
 	
-	load_level(current_level_id)
-	
-	$SoundtrackHandler.attachPlayer(current_level.player_ref)
-	$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Neutral")
-	$SoundtrackHandler.play()
+	$MenuLayer/MainMenu.start_game.connect(start_game)
+	$Thermometer.visible = false

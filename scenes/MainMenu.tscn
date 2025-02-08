@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3bsieyrhkmwh"]
+
+[ext_resource type="Theme" uid="uid://coo5bwre2dob0" path="res://main_theme.tres" id="1_t7env"]
+[ext_resource type="Texture2D" uid="uid://c2m65ylg4mr5x" path="res://textures/ThermalGradient.tres" id="2_agfiv"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="2_w4msm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_spb0u"]
+font_size = 31
+
+[sub_resource type="LabelSettings" id="LabelSettings_q1obf"]
+line_spacing = 8.0
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t7env")
+script = ExtResource("2_w4msm")
+
+[node name="Title" type="Label" parent="."]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+text = "Temperature Balance"
+label_settings = SubResource("LabelSettings_spb0u")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Title"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_agfiv")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -8.5
+offset_bottom = 8.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press space to start"
+label_settings = SubResource("LabelSettings_q1obf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Label"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_agfiv")
+expand_mode = 1

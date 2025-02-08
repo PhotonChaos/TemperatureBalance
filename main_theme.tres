@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://coo5bwre2dob0"]
+
+[ext_resource type="FontFile" uid="uid://crk3ox5d7acfl" path="res://MegamaxJonathanToo-YqOq2.ttf" id="1_86g4c"]
+
+[resource]
+default_font = ExtResource("1_86g4c")
+Button/fonts/font = ExtResource("1_86g4c")
+Label/fonts/font = ExtResource("1_86g4c")
