@@ -9,6 +9,7 @@ signal steam
 signal hot_pickup
 signal cold_pickup
 signal battery_pickup(num_collected: int)
+signal battery_sfx
 
 @export var level_name: String
 @export var player_template: PackedScene
@@ -156,6 +157,7 @@ func handle_tile_effects():
 				win.emit()
 			else:
 				battery_pickup.emit(batteries_collected)
-			
+				battery_sfx.emit()
+	
 			set_tile(player_cell_x, player_cell_y, TileType.AIR)
 	
