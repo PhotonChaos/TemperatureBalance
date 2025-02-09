@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uv0qrdft1h4i"
-path="res://.godot/imported/IceCube-Sheet.png-58a30f96367242a85de2d59b9f71534e.ctex"
+uid="uid://8vkk7efxs3l1"
+path="res://.godot/imported/IceCubeFreezing-Sheet.png-66b7ac0244055f2337ec66fdc9555478.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/IceCube-Sheet.png"
-dest_files=["res://.godot/imported/IceCube-Sheet.png-58a30f96367242a85de2d59b9f71534e.ctex"]
+source_file="res://textures/IceCubeFreezing-Sheet.png"
+dest_files=["res://.godot/imported/IceCubeFreezing-Sheet.png-66b7ac0244055f2337ec66fdc9555478.ctex"]
 
 [params]
 
