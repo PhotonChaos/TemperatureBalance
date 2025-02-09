@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dr8nqg74dw7ab"]
+[gd_scene load_steps=40 format=3 uid="uid://dr8nqg74dw7ab"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
 [ext_resource type="PackedScene" uid="uid://ce47jnwu70pcx" path="res://scenes/levels/Level.tscn" id="2_bh3j1"]
@@ -19,19 +19,16 @@
 [ext_resource type="PackedScene" uid="uid://c3bsieyrhkmwh" path="res://scenes/MainMenu.tscn" id="11_jm3ud"]
 [ext_resource type="AudioStream" uid="uid://lnc4nafmpuf4" path="res://audio/effects/Freeze.wav" id="12_80a3x"]
 [ext_resource type="AudioStream" uid="uid://cjp8y73uj5c4o" path="res://audio/effects/IcePickup.wav" id="13_4nidr"]
-[ext_resource type="PackedScene" uid="uid://baaqhhcl17vd2" path="res://scenes/levels/Challenge6.tscn" id="13_erdli"]
+[ext_resource type="PackedScene" path="res://scenes/levels/Challenge6.tscn" id="13_erdli"]
 [ext_resource type="AudioStream" uid="uid://bsihufggi4ubi" path="res://audio/effects/FirePickup.wav" id="14_lkvoy"]
 [ext_resource type="AudioStream" uid="uid://dcb441fsv2sra" path="res://audio/effects/LevelComplete.wav" id="15_gh57y"]
 [ext_resource type="PackedScene" uid="uid://c54c46vwr6weo" path="res://scenes/WinScreen.tscn" id="17_ah4y5"]
 [ext_resource type="AudioStream" uid="uid://bk3wydsiedryw" path="res://audio/effects/Evaporate.wav" id="21_fs8h1"]
-[ext_resource type="Theme" path="res://main_theme.tres" id="23_5yikk"]
+[ext_resource type="Theme" uid="uid://coo5bwre2dob0" path="res://main_theme.tres" id="23_5yikk"]
 [ext_resource type="Script" path="res://scripts/level_stats.gd" id="24_pqpeu"]
 [ext_resource type="Texture2D" uid="uid://lan4vdrweiid" path="res://textures/UI/SteamIcon-Sheet.png" id="26_erw34"]
 [ext_resource type="Texture2D" uid="uid://cq4hx86kmjolt" path="res://textures/UI/IceCubeMelting-Sheet.png" id="26_toomn"]
 [ext_resource type="Texture2D" uid="uid://8vkk7efxs3l1" path="res://textures/UI/IceCubeFreezing-Sheet.png" id="27_vv8ik"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_axt1d"]
-font_size = 11
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8f4s"]
 atlas = ExtResource("26_erw34")
@@ -99,6 +96,9 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_axt1d"]
+font_size = 11
+
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_yeod1")
 levels = Array[PackedScene]([ExtResource("2_bh3j1"), ExtResource("3_bkkma"), ExtResource("4_ncwfd"), ExtResource("5_jamrn"), ExtResource("5_3ufol"), ExtResource("6_tnap7"), ExtResource("8_a303j"), ExtResource("7_12tus"), ExtResource("9_77223"), ExtResource("10_egq68"), ExtResource("11_8rgfa"), ExtResource("13_erdli")])
@@ -109,6 +109,22 @@ level_test_index = 1
 [node name="Thermometer" parent="." instance=ExtResource("9_kc3wl")]
 z_index = 1
 position = Vector2(320, 360)
+
+[node name="SteamIcon" type="AnimatedSprite2D" parent="Thermometer"]
+position = Vector2(121, -1)
+sprite_frames = SubResource("SpriteFrames_uvahb")
+frame = 1
+frame_progress = 0.69481
+
+[node name="MeltIcon" type="AnimatedSprite2D" parent="Thermometer"]
+position = Vector2(104, 0)
+sprite_frames = SubResource("SpriteFrames_3eebf")
+
+[node name="FreezeIcon" type="AnimatedSprite2D" parent="Thermometer"]
+position = Vector2(104, 0)
+sprite_frames = SubResource("SpriteFrames_sxotj")
+frame = 1
+frame_progress = 0.418776
 
 [node name="DeathSfxHandler" parent="." instance=ExtResource("10_2l2ee")]
 volume_db = -5.0
@@ -167,22 +183,6 @@ grow_vertical = 0
 text = "LEVEL X: Main menu"
 label_settings = SubResource("LabelSettings_axt1d")
 vertical_alignment = 1
-
-[node name="Steam" type="AnimatedSprite2D" parent="."]
-position = Vector2(441, 359)
-sprite_frames = SubResource("SpriteFrames_uvahb")
-frame = 1
-frame_progress = 0.69481
-
-[node name="Melt" type="AnimatedSprite2D" parent="."]
-position = Vector2(424, 360)
-sprite_frames = SubResource("SpriteFrames_3eebf")
-
-[node name="Freeze" type="AnimatedSprite2D" parent="."]
-position = Vector2(424, 360)
-sprite_frames = SubResource("SpriteFrames_sxotj")
-frame = 1
-frame_progress = 0.418776
 
 [connection signal="start_game" from="MenuLayer/MainMenu" to="." method="start_game"]
 [connection signal="main_menu" from="WinScreenLayer/WinScreen" to="." method="_on_win_screen_main_menu"]

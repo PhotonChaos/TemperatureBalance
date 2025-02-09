@@ -9,6 +9,10 @@ extends Node2D
 @onready var win_screen: WinScreen = $WinScreenLayer/WinScreen as WinScreen
 @onready var level_title: LevelStatUI = $LevelStatLayer/LevelStats as LevelStatUI
 
+@onready var freeze_icon: AnimatedSprite2D = $Thermometer/FreezeIcon as AnimatedSprite2D
+@onready var melt_icon: AnimatedSprite2D = $Thermometer/MeltIcon as AnimatedSprite2D
+@onready var steam_icon: AnimatedSprite2D = $Thermometer/SteamIcon as AnimatedSprite2D
+
 var current_level_id: int = 0
 var current_level: Level = null
 
@@ -91,6 +95,10 @@ func _ready() -> void:
 	$Thermometer.hide()
 	win_screen.hide()
 	level_title.hide()
+	
+	freeze_icon.hide()
+	melt_icon.hide()
+	steam_icon.hide()
 
 func _on_win_screen_main_menu() -> void:	
 	main_menu.game_started = false
