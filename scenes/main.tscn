@@ -19,7 +19,6 @@
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_yeod1")
 levels = Array[PackedScene]([ExtResource("2_bh3j1"), ExtResource("3_bkkma"), ExtResource("4_ncwfd"), ExtResource("5_jamrn"), ExtResource("6_tnap7"), ExtResource("7_12tus")])
-level_test_index = 5
 
 [node name="SoundtrackHandler" parent="." instance=ExtResource("3_j0vxa")]
 
@@ -41,7 +40,6 @@ stream = ExtResource("13_4nidr")
 
 [node name="HotPickupSfxHandler" parent="." instance=ExtResource("10_2l2ee")]
 stream = ExtResource("14_lkvoy")
-volume_db = -8.0
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 
