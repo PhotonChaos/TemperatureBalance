@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dr8nqg74dw7ab"]
+[gd_scene load_steps=41 format=3 uid="uid://dr8nqg74dw7ab"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
 [ext_resource type="PackedScene" uid="uid://ce47jnwu70pcx" path="res://scenes/levels/Level.tscn" id="2_bh3j1"]
@@ -99,6 +99,9 @@ animations = [{
 [sub_resource type="LabelSettings" id="LabelSettings_axt1d"]
 font_size = 11
 
+[sub_resource type="LabelSettings" id="LabelSettings_g675i"]
+font_size = 11
+
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_yeod1")
 levels = Array[PackedScene]([ExtResource("2_bh3j1"), ExtResource("3_bkkma"), ExtResource("4_ncwfd"), ExtResource("5_jamrn"), ExtResource("5_3ufol"), ExtResource("6_tnap7"), ExtResource("8_a303j"), ExtResource("7_12tus"), ExtResource("9_77223"), ExtResource("10_egq68"), ExtResource("11_8rgfa"), ExtResource("13_erdli")])
@@ -183,6 +186,21 @@ grow_vertical = 0
 text = "LEVEL X: Main menu"
 label_settings = SubResource("LabelSettings_axt1d")
 vertical_alignment = 1
+
+[node name="ResetReminder" type="Label" parent="LevelStatLayer/LevelStats"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -17.0
+offset_right = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Press 'R' to reset"
+label_settings = SubResource("LabelSettings_g675i")
 
 [connection signal="start_game" from="MenuLayer/MainMenu" to="." method="start_game"]
 [connection signal="main_menu" from="WinScreenLayer/WinScreen" to="." method="_on_win_screen_main_menu"]
