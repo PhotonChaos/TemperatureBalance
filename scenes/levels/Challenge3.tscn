@@ -7,6 +7,7 @@
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_3wf5b")
+level_name = "Thermal Shock"
 player_template = ExtResource("2_cfp3m")
 
 [node name="LevelLayer" type="TileMapLayer" parent="."]

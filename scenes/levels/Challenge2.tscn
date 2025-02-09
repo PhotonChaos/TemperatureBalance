@@ -7,6 +7,7 @@
 
 [node name="Level2" type="Node2D"]
 script = ExtResource("1_pxrq8")
+level_name = "Cold Pockets"
 player_template = ExtResource("2_ofiej")
 
 [node name="LevelLayer" type="TileMapLayer" parent="."]
