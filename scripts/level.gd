@@ -3,6 +3,10 @@ extends Node2D
 
 signal win
 signal loss
+signal melt
+signal freeze
+signal hot_pickup
+signal cold_pickup
 
 @export var level_name: String
 @export var player_template: PackedScene
@@ -104,6 +108,7 @@ func handle_tile_effects():
 			if player_ref.temperature < 0:
 				player_ref.add_temp(1)
 				set_tile(player_cell_x, player_cell_y, TileType.ICE)
+				freeze.emit()
 			else:
 				# Player sinks if they aren't cold enough
 				loss.emit()
@@ -118,14 +123,17 @@ func handle_tile_effects():
 			if player_ref.temperature > 0:
 				player_ref.add_temp(-1)
 				set_tile(player_cell_x, player_cell_y, TileType.WATER)
+				melt.emit()
 		
 		
 		TileType.SNOWFLAKE:
 			player_ref.add_temp(-1)
 			level_tilemap.erase_cell(Vector2i(player_cell_x, player_cell_y))
+			cold_pickup.emit()
 		
 		TileType.FIRE:
 			player_ref.add_temp(1)
 			level_tilemap.erase_cell(Vector2i(player_cell_x, player_cell_y))
+			hot_pickup.emit()
 			
 	

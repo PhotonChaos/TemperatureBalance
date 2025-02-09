@@ -28,7 +28,11 @@ func load_level(level_id: int):
 	
 	$Thermometer.attachPlayer(current_level.player_ref)
 	$Thermometer.updateBar(current_level.player_ref.temperature)
-	$DeathSfxHandler.attach_level(current_level)
+	$DeathSfxHandler.attach_signal(current_level.loss)
+	$MeltSfxHandler.attach_signal(current_level.melt)
+	$HotPickupSfxHandler.attach_signal(current_level.hot_pickup)
+	$ColdPickupSfxHandler.attach_signal(current_level.cold_pickup)
+	$FreezeSfxHandler.attach_signal(current_level.freeze)
 
 func unload_level():
 	remove_child(current_level)

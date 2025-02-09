@@ -5,10 +5,10 @@ extends AudioStreamPlayer
 func _ready():
 	pass # Replace with function body.
 
-func attach_level(level):
-	level.loss.connect(playDeathSound)
+func attach_signal(sig):
+	sig.connect(playSound)
 
-func playDeathSound():
+func playSound():
 	play(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
