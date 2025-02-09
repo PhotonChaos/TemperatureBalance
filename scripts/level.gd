@@ -156,4 +156,6 @@ func handle_tile_effects():
 				win.emit()
 			else:
 				battery_pickup.emit(batteries_collected)
+			
+			set_tile(player_cell_x, player_cell_y, TileType.AIR)
 	
