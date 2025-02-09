@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm625mnqgtfv7"
-path="res://.godot/imported/LittleGuyOverheating-Sheet.png-25347d7bc32d0475aae082b1dc60769c.ctex"
+uid="uid://sv486du6q603"
+path="res://.godot/imported/Grass.png-45111a599bb722f3f6bc202051f03423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/LittleGuyOverheating-Sheet.png"
-dest_files=["res://.godot/imported/LittleGuyOverheating-Sheet.png-25347d7bc32d0475aae082b1dc60769c.ctex"]
+source_file="res://textures/Tiles/Grass.png"
+dest_files=["res://.godot/imported/Grass.png-45111a599bb722f3f6bc202051f03423.ctex"]
 
 [params]
 

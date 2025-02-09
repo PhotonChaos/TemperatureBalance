@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c640en3hfl6lm"
-path="res://.godot/imported/Tilesheet.png-0b2d95f83b8450ab8dce93addeacb1a5.ctex"
+uid="uid://hn6vqegs71u7"
+path="res://.godot/imported/LittleGuyFreezing-Sheet.png-231220ce8a485b66039d480f4d45c786.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Tilesheet.png"
-dest_files=["res://.godot/imported/Tilesheet.png-0b2d95f83b8450ab8dce93addeacb1a5.ctex"]
+source_file="res://textures/Player/LittleGuyFreezing-Sheet.png"
+dest_files=["res://.godot/imported/LittleGuyFreezing-Sheet.png-231220ce8a485b66039d480f4d45c786.ctex"]
 
 [params]
 

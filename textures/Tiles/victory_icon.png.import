@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3sxfj2xq82x7"
-path="res://.godot/imported/Dirt.png-e7f59af76e189c60ec3d3ace9e874f46.ctex"
+uid="uid://dcx6fuiwe1fk3"
+path="res://.godot/imported/victory_icon.png-19f45cbeeefe695b6c2957619d3fdf14.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Dirt.png"
-dest_files=["res://.godot/imported/Dirt.png-e7f59af76e189c60ec3d3ace9e874f46.ctex"]
+source_file="res://textures/Tiles/victory_icon.png"
+dest_files=["res://.godot/imported/victory_icon.png-19f45cbeeefe695b6c2957619d3fdf14.ctex"]
 
 [params]
 

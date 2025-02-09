@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv1udgve7mtgl"
-path="res://.godot/imported/Flame-Sheet.png-e534c94e6f01f33ca96b17b850f536d3.ctex"
+uid="uid://c640en3hfl6lm"
+path="res://.godot/imported/Tilesheet.png-3bb43ae8d81897ad5e511fc521ff5828.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Flame-Sheet.png"
-dest_files=["res://.godot/imported/Flame-Sheet.png-e534c94e6f01f33ca96b17b850f536d3.ctex"]
+source_file="res://textures/Tiles/Tilesheet.png"
+dest_files=["res://.godot/imported/Tilesheet.png-3bb43ae8d81897ad5e511fc521ff5828.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://decn382cjjmav"
-path="res://.godot/imported/LittleGuyDrowning-Sheet.png-893848033ecdb72b2ab08b88fab50266.ctex"
+uid="uid://ggnc2u622awb"
+path="res://.godot/imported/Snow.png-52c5125bc8a3502d72e0d08f242df6b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/LittleGuyDrowning-Sheet.png"
-dest_files=["res://.godot/imported/LittleGuyDrowning-Sheet.png-893848033ecdb72b2ab08b88fab50266.ctex"]
+source_file="res://textures/Tiles/Snow.png"
+dest_files=["res://.godot/imported/Snow.png-52c5125bc8a3502d72e0d08f242df6b1.ctex"]
 
 [params]
 

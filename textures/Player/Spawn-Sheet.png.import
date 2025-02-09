@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sv486du6q603"
-path="res://.godot/imported/Grass.png-4882ee70c464d824fba9c3aeffd15ee5.ctex"
+uid="uid://d2b4wvjc0ccs8"
+path="res://.godot/imported/Spawn-Sheet.png-8de1ffb6e31dcc86cb30acb90fb1cf92.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Grass.png"
-dest_files=["res://.godot/imported/Grass.png-4882ee70c464d824fba9c3aeffd15ee5.ctex"]
+source_file="res://textures/Player/Spawn-Sheet.png"
+dest_files=["res://.godot/imported/Spawn-Sheet.png-8de1ffb6e31dcc86cb30acb90fb1cf92.ctex"]
 
 [params]
 

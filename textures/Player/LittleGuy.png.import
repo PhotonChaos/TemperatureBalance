@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dipmtp8tbets6"
-path="res://.godot/imported/Concrete.png-415b6301197c59a007bc0772d93120a8.ctex"
+uid="uid://cj4o2hd0i8dyg"
+path="res://.godot/imported/LittleGuy.png-01fd074921e2587010ed8cbe9af99490.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Concrete.png"
-dest_files=["res://.godot/imported/Concrete.png-415b6301197c59a007bc0772d93120a8.ctex"]
+source_file="res://textures/Player/LittleGuy.png"
+dest_files=["res://.godot/imported/LittleGuy.png-01fd074921e2587010ed8cbe9af99490.ctex"]
 
 [params]
 

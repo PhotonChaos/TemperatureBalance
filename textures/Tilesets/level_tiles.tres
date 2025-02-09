@@ -1,17 +1,17 @@
 [gd_resource type="TileSet" load_steps=17 format=3 uid="uid://fmwtukmj00o0"]
 
-[ext_resource type="Texture2D" uid="uid://c640en3hfl6lm" path="res://textures/Tilesheet.png" id="1_6n0cq"]
-[ext_resource type="Texture2D" uid="uid://d3sxfj2xq82x7" path="res://textures/Dirt.png" id="2_m14p8"]
-[ext_resource type="Texture2D" uid="uid://sv486du6q603" path="res://textures/Grass.png" id="3_ut7ql"]
-[ext_resource type="Texture2D" uid="uid://b7ntsqeifctm0" path="res://textures/Ice.png" id="4_f1lmt"]
-[ext_resource type="Texture2D" uid="uid://bv1udgve7mtgl" path="res://textures/Flame-Sheet.png" id="5_ksgdy"]
-[ext_resource type="Texture2D" uid="uid://bixwkbeij6sig" path="res://textures/Snowflake-Sheet.png" id="6_8xqgr"]
-[ext_resource type="Texture2D" uid="uid://c01k88snuy7p4" path="res://textures/Water-Sheet.png" id="7_sqx12"]
-[ext_resource type="Texture2D" uid="uid://dcx6fuiwe1fk3" path="res://textures/victory_icon.png" id="8_c7a4q"]
+[ext_resource type="Texture2D" uid="uid://c640en3hfl6lm" path="res://textures/Tiles/Tilesheet.png" id="1_f8e0m"]
+[ext_resource type="Texture2D" uid="uid://d3sxfj2xq82x7" path="res://textures/Tiles/Dirt.png" id="2_8rtbn"]
+[ext_resource type="Texture2D" uid="uid://sv486du6q603" path="res://textures/Tiles/Grass.png" id="3_16evi"]
+[ext_resource type="Texture2D" uid="uid://b7ntsqeifctm0" path="res://textures/Tiles/Ice.png" id="4_ga0d1"]
+[ext_resource type="Texture2D" uid="uid://bv1udgve7mtgl" path="res://textures/Tiles/Flame-Sheet.png" id="5_ehao2"]
+[ext_resource type="Texture2D" uid="uid://bixwkbeij6sig" path="res://textures/Tiles/Snowflake-Sheet.png" id="6_5q8gb"]
+[ext_resource type="Texture2D" uid="uid://c01k88snuy7p4" path="res://textures/Tiles/Water-Sheet.png" id="7_c4kll"]
+[ext_resource type="Texture2D" uid="uid://dcx6fuiwe1fk3" path="res://textures/Tiles/victory_icon.png" id="8_enny8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oukqe"]
 resource_name = "Concrete"
-texture = ExtResource("1_6n0cq")
+texture = ExtResource("1_f8e0m")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -66,22 +66,22 @@ texture = ExtResource("1_6n0cq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_edfh0"]
 resource_name = "Dirt"
-texture = ExtResource("2_m14p8")
+texture = ExtResource("2_8rtbn")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qwjse"]
 resource_name = "Grass"
-texture = ExtResource("3_ut7ql")
+texture = ExtResource("3_16evi")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m23w1"]
 resource_name = "Ice"
-texture = ExtResource("4_f1lmt")
+texture = ExtResource("4_ga0d1")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fr57d"]
 resource_name = "Fire"
-texture = ExtResource("5_ksgdy")
+texture = ExtResource("5_ehao2")
 0:0/animation_columns = 7
 0:0/animation_frame_0/duration = 0.15
 0:0/animation_frame_1/duration = 0.15
@@ -94,7 +94,7 @@ texture = ExtResource("5_ksgdy")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qoyv"]
 resource_name = "Snowflake"
-texture = ExtResource("6_8xqgr")
+texture = ExtResource("6_5q8gb")
 0:0/animation_columns = 11
 0:0/animation_frame_0/duration = 0.1
 0:0/animation_frame_1/duration = 0.1
@@ -111,14 +111,14 @@ texture = ExtResource("6_8xqgr")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ir37i"]
 resource_name = "Water"
-texture = ExtResource("7_sqx12")
+texture = ExtResource("7_c4kll")
 0:0/animation_frame_0/duration = 0.5
 0:0/animation_frame_1/duration = 0.5
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5pli"]
 resource_name = "Goal"
-texture = ExtResource("8_c7a4q")
+texture = ExtResource("8_enny8")
 0:0/0 = 0
 
 [resource]

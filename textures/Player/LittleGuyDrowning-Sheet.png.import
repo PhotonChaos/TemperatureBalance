@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bixwkbeij6sig"
-path="res://.godot/imported/Snowflake-Sheet.png-d3676c784f8c5e5283888eecfcadfc79.ctex"
+uid="uid://decn382cjjmav"
+path="res://.godot/imported/LittleGuyDrowning-Sheet.png-240c6b1a79cf3c8fbcbdb00afdc56538.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Snowflake-Sheet.png"
-dest_files=["res://.godot/imported/Snowflake-Sheet.png-d3676c784f8c5e5283888eecfcadfc79.ctex"]
+source_file="res://textures/Player/LittleGuyDrowning-Sheet.png"
+dest_files=["res://.godot/imported/LittleGuyDrowning-Sheet.png-240c6b1a79cf3c8fbcbdb00afdc56538.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmxslcdnslp0l"
-path="res://.godot/imported/VerticalWall.png-469ea1b720fb235e2c101b2db1dd728b.ctex"
+uid="uid://dipmtp8tbets6"
+path="res://.godot/imported/Concrete.png-6b4baa67bf92a44ee3ac77a2fe925d6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/VerticalWall.png"
-dest_files=["res://.godot/imported/VerticalWall.png-469ea1b720fb235e2c101b2db1dd728b.ctex"]
+source_file="res://textures/Tiles/Concrete.png"
+dest_files=["res://.godot/imported/Concrete.png-6b4baa67bf92a44ee3ac77a2fe925d6f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c01k88snuy7p4"
-path="res://.godot/imported/Water-Sheet.png-afccb122f0dec48a734fb5087ce37094.ctex"
+uid="uid://bf37vuga5fhwq"
+path="res://.godot/imported/LittleGuy-Sheet.png-98a00fae9e4e7b28fb60f42ac7ef65a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Water-Sheet.png"
-dest_files=["res://.godot/imported/Water-Sheet.png-afccb122f0dec48a734fb5087ce37094.ctex"]
+source_file="res://textures/Player/LittleGuy-Sheet.png"
+dest_files=["res://.godot/imported/LittleGuy-Sheet.png-98a00fae9e4e7b28fb60f42ac7ef65a6.ctex"]
 
 [params]
 
