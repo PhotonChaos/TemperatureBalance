@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dr8nqg74dw7ab"]
+[gd_scene load_steps=23 format=3 uid="uid://dr8nqg74dw7ab"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
 [ext_resource type="PackedScene" uid="uid://ce47jnwu70pcx" path="res://scenes/levels/Level.tscn" id="2_bh3j1"]
@@ -9,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dxmhjfbwfb6gm" path="res://scenes/levels/Tutorial3.tscn" id="5_jamrn"]
 [ext_resource type="PackedScene" uid="uid://bjdag3d8dtyo0" path="res://scenes/levels/Challenge1.tscn" id="6_tnap7"]
 [ext_resource type="PackedScene" uid="uid://c0e45rx2qtbde" path="res://scenes/levels/Challenge2.tscn" id="7_12tus"]
-[ext_resource type="PackedScene" path="res://scenes/levels/Challenge3.tscn" id="9_77223"]
+[ext_resource type="PackedScene" uid="uid://bqyladtx4o1x1" path="res://scenes/levels/Tutorial5.tscn" id="8_a303j"]
+[ext_resource type="PackedScene" uid="uid://duaegsqlc2sl3" path="res://scenes/levels/Challenge3.tscn" id="9_77223"]
 [ext_resource type="PackedScene" uid="uid://b6ddgo4t5iycf" path="res://scenes/thermometer.tscn" id="9_kc3wl"]
 [ext_resource type="PackedScene" uid="uid://c6o1prkrwh8bx" path="res://audio/effects/DeathSFXHandler.tscn" id="10_2l2ee"]
 [ext_resource type="PackedScene" uid="uid://b8dtewg8a8guf" path="res://scenes/levels/Challenge4.tscn" id="10_egq68"]
@@ -24,7 +25,7 @@
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_yeod1")
-levels = Array[PackedScene]([ExtResource("2_bh3j1"), ExtResource("3_bkkma"), ExtResource("4_ncwfd"), ExtResource("5_jamrn"), ExtResource("5_3ufol"), ExtResource("6_tnap7"), ExtResource("7_12tus"), ExtResource("9_77223"), ExtResource("10_egq68"), ExtResource("11_8rgfa")])
+levels = Array[PackedScene]([ExtResource("2_bh3j1"), ExtResource("3_bkkma"), ExtResource("4_ncwfd"), ExtResource("5_jamrn"), ExtResource("5_3ufol"), ExtResource("6_tnap7"), ExtResource("8_a303j"), ExtResource("7_12tus"), ExtResource("9_77223"), ExtResource("10_egq68"), ExtResource("11_8rgfa")])
 level_test_index = 1
 
 [node name="SoundtrackHandler" parent="." instance=ExtResource("3_j0vxa")]
