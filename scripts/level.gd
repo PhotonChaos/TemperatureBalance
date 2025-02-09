@@ -115,7 +115,7 @@ func handle_tile_effects():
 				freeze.emit()
 			else:
 				# Player sinks if they aren't cold enough
-				loss.emit()
+				player_ref.die("drown")
 		
 		TileType.ICE:
 			if player_ref.last_move == Player.MoveDir.NONE:
