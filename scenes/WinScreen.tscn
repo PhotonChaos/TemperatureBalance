@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c54c46vwr6weo"]
 
 [ext_resource type="Theme" uid="uid://coo5bwre2dob0" path="res://main_theme.tres" id="1_lrssi"]
-[ext_resource type="Texture2D" uid="uid://c2m65ylg4mr5x" path="res://textures/ThermalGradient.tres" id="2_b10yj"]
+[ext_resource type="Texture2D" uid="uid://cugml7herauhn" path="res://textures/ThermalGradient.tres" id="2_b10yj"]
 [ext_resource type="Script" path="res://scripts/win_screen.gd" id="2_wkmdg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_oc05r"]
