@@ -12,6 +12,8 @@ func attachPlayer(player):
 # Connected to player temperature: whenever temperature changes, check if music transition is needed, 
 # and if it is, apply it
 func updateLayer(temperature):
+	if get_stream_playback() == null:
+		play()
 	var next_track = "Main Theme Neutral"
 	if temperature > 0:
 		next_track = "Main Theme Hot"

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dxmhjfbwfb6gm" path="res://scenes/levels/Tutorial3.tscn" id="5_jamrn"]
 [ext_resource type="PackedScene" uid="uid://bjdag3d8dtyo0" path="res://scenes/levels/Challenge1.tscn" id="6_tnap7"]
 [ext_resource type="PackedScene" uid="uid://c0e45rx2qtbde" path="res://scenes/levels/Challenge2.tscn" id="7_12tus"]
-[ext_resource type="PackedScene" path="res://scenes/thermometer.tscn" id="9_kc3wl"]
+[ext_resource type="PackedScene" uid="uid://caa2futy5kh05" path="res://scenes/thermometer.tscn" id="9_kc3wl"]
 [ext_resource type="PackedScene" uid="uid://c6o1prkrwh8bx" path="res://audio/effects/DeathSFXHandler.tscn" id="10_2l2ee"]
 [ext_resource type="AudioStream" uid="uid://cuhf8k348bx5p" path="res://audio/effects/Melt.wav" id="11_al86s"]
 [ext_resource type="PackedScene" uid="uid://c3bsieyrhkmwh" path="res://scenes/MainMenu.tscn" id="11_jm3ud"]

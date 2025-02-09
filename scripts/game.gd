@@ -18,6 +18,9 @@ func load_level(level_id: int):
 	current_level.win.connect(level_complete)
 	current_level.loss.connect(restart_level)
 	
+	$SoundtrackHandler.attachPlayer(current_level.player_ref)
+	$SoundtrackHandler.updateLayer(current_level.player_ref.temperature)
+	
 	$Thermometer.attachPlayer(current_level.player_ref)
 	$Thermometer.updateBar(current_level.player_ref.temperature)
 	$DeathSfxHandler.attach_signal(current_level.loss)
@@ -26,7 +29,6 @@ func load_level(level_id: int):
 	$ColdPickupSfxHandler.attach_signal(current_level.cold_pickup)
 	$FreezeSfxHandler.attach_signal(current_level.freeze)
 	$LevelCompleteSfxHandler.attach_signal(current_level.win)
-
 func unload_level():
 	remove_child(current_level)
 	current_level.queue_free()
@@ -60,7 +62,12 @@ func start_game():
 	load_level(current_level_id)
 	
 	$SoundtrackHandler.attachPlayer(current_level.player_ref)
-	$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Neutral")
+	if current_level.starting_temperature < 0:
+		$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Cold")
+	elif current_level.starting_temperature > 0:
+		$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Hot")
+	else:
+		$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Neutral")
 	$SoundtrackHandler.play()
 
 func finish_game():
