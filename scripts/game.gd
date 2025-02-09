@@ -37,7 +37,6 @@ func load_level(level_id: int):
 	$FreezeSfxHandler.attach_signal(current_level.freeze)
 	$EvaporateSfxHandler.attach_signal(current_level.steam)
 	$LevelCompleteSfxHandler.attach_signal(current_level.win)
-	$BatteryPickupSfxHandler.attach_signal(current_level.battery_sfx)
 func unload_level():
 	remove_child(current_level)
 	current_level.queue_free()
