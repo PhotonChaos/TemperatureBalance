@@ -24,6 +24,8 @@ func load_level(level_id: int):
 	current_level.loss.connect(restart_level)
 	
 	level_title.update_level_title(level_id, current_level.level_name)
+	level_title.attach_player(current_level.player_ref)
+	level_title.update_temperature(current_level.player_ref.temperature)
 	
 	$SoundtrackHandler.attachPlayer(current_level.player_ref)
 	$SoundtrackHandler.updateLayer(current_level.player_ref.temperature)
@@ -38,6 +40,7 @@ func load_level(level_id: int):
 	$EvaporateSfxHandler.attach_signal(current_level.steam)
 	$LevelCompleteSfxHandler.attach_signal(current_level.win)
 	$BatteryPickupSfxHandler.attach_signal(current_level.battery_sfx)
+	
 func unload_level():
 	remove_child(current_level)
 	current_level.queue_free()

@@ -11,8 +11,6 @@ signal cold_pickup
 signal battery_pickup(num_collected: int)
 signal battery_sfx
 
-
-
 @export var level_name: String
 @export var player_template: PackedScene
 @export var starting_temperature: int = 0
