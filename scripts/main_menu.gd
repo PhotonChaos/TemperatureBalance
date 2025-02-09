@@ -1,3 +1,4 @@
+class_name MainMenu
 extends Control
 
 signal start_game

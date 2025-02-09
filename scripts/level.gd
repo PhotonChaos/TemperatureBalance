@@ -78,6 +78,7 @@ func _ready() -> void:
 	player_ref.request_move.connect(handle_move_request)
 	player_ref.moved.connect(handle_tile_effects)
 	player_ref.retry.connect(func(): loss.emit())
+	player_ref.debug_win_level.connect(func(): win.emit())
 	
 	print("Loaded", level_name)
 

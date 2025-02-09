@@ -4,5 +4,4 @@
 
 [resource]
 default_font = ExtResource("1_86g4c")
-Button/fonts/font = ExtResource("1_86g4c")
-Label/fonts/font = ExtResource("1_86g4c")
+default_font_size = 16

@@ -8,6 +8,8 @@ signal request_move(dst_x, dst_y)
 signal moved
 signal retry
 
+signal debug_win_level
+
 @export var start_temp: int
 @export var move_dist: int = 16
 
@@ -84,6 +86,12 @@ func _input(event: InputEvent) -> void:
 		request_move.emit(1, 0)
 	elif event.is_action_pressed("retry"):
 		retry.emit()
+	elif event.is_action_pressed("debug_win_level"):
+		debug_win_level.emit()
+	elif event.is_action_pressed("debug_add_temp"):
+		add_temp(1)
+	elif event.is_action_pressed("debug_remove_temp"):
+		add_temp(-1)
 	else:
 		return
 	

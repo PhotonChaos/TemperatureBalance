@@ -5,19 +5,11 @@ extends Node2D
 @export var levels: Array[PackedScene]
 @export var level_test_index: int
 
+@onready var main_menu: MainMenu = $MenuLayer/MainMenu as MainMenu
+@onready var win_screen: WinScreen = $WinScreenLayer/WinScreen as WinScreen
+
 var current_level_id: int = 0
 var current_level: Level = null
-
-# TODO:
-# [x] Main Menu
-# [x] Level loading
-#   [x] Tilemap
-# [x] Success signal handler
-# [x] Death signal handler
-# [x] Restart function
-# [x] Death restart screen (optional)
-# [x] Temperature update signal handler (Maybe this goes in UI)
-# [ ] Final victory screen
 
 func load_level(level_id: int):
 	current_level = levels[level_id].instantiate()
@@ -54,19 +46,26 @@ func restart_level():
 func level_complete():
 	current_level_id += 1
 	unload_level()
-	load_level(current_level_id)
+	
+	if current_level_id >= len(levels):
+		finish_game()
+	else:
+		load_level(current_level_id)
 
 func start_game():
-	var menu = $MenuLayer/MainMenu
-	remove_child(menu)
-	menu.queue_free()
-	
-	$Thermometer.visible = true
+	main_menu.hide()
+		
+	$Thermometer.show()
 	load_level(current_level_id)
 	
 	$SoundtrackHandler.attachPlayer(current_level.player_ref)
 	$SoundtrackHandler.set("properties/switch_to_clip", "Main Theme Neutral")
 	$SoundtrackHandler.play()
+
+func finish_game():
+	current_level_id = level_test_index
+	$Thermometer.hide()
+	win_screen.show()
 
 func _ready() -> void:
 	current_level_id = level_test_index
@@ -75,5 +74,11 @@ func _ready() -> void:
 		print("ERROR: No levels specified!")
 		return
 	
-	$MenuLayer/MainMenu.start_game.connect(start_game)
-	$Thermometer.visible = false
+	$Thermometer.hide()
+	win_screen.hide()
+
+
+func _on_win_screen_main_menu() -> void:	
+	main_menu.game_started = false
+	main_menu.show()
+	win_screen.hide()
