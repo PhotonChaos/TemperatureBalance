@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dr8nqg74dw7ab"]
+[gd_scene load_steps=17 format=3 uid="uid://dr8nqg74dw7ab"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
 [ext_resource type="PackedScene" uid="uid://ce47jnwu70pcx" path="res://scenes/levels/Level.tscn" id="2_bh3j1"]
@@ -15,10 +15,12 @@
 [ext_resource type="AudioStream" uid="uid://lnc4nafmpuf4" path="res://audio/effects/Freeze.wav" id="12_80a3x"]
 [ext_resource type="AudioStream" uid="uid://cjp8y73uj5c4o" path="res://audio/effects/IcePickup.wav" id="13_4nidr"]
 [ext_resource type="AudioStream" uid="uid://bsihufggi4ubi" path="res://audio/effects/FirePickup.wav" id="14_lkvoy"]
+[ext_resource type="AudioStream" uid="uid://dcb441fsv2sra" path="res://audio/effects/LevelComplete.wav" id="15_gh57y"]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_yeod1")
 levels = Array[PackedScene]([ExtResource("2_bh3j1"), ExtResource("3_bkkma"), ExtResource("4_ncwfd"), ExtResource("5_jamrn"), ExtResource("6_tnap7"), ExtResource("7_12tus")])
+level_test_index = 1
 
 [node name="SoundtrackHandler" parent="." instance=ExtResource("3_j0vxa")]
 
@@ -41,6 +43,10 @@ stream = ExtResource("13_4nidr")
 [node name="HotPickupSfxHandler" parent="." instance=ExtResource("10_2l2ee")]
 stream = ExtResource("14_lkvoy")
 volume_db = 5.0
+
+[node name="LevelCompleteSfxHandler" parent="." instance=ExtResource("10_2l2ee")]
+stream = ExtResource("15_gh57y")
+volume_db = 8.0
 
 [node name="MenuLayer" type="CanvasLayer" parent="."]
 
