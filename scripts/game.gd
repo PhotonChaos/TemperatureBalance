@@ -7,6 +7,7 @@ extends Node2D
 
 @onready var main_menu: MainMenu = $MenuLayer/MainMenu as MainMenu
 @onready var win_screen: WinScreen = $WinScreenLayer/WinScreen as WinScreen
+@onready var level_title: LevelStatUI = $LevelStatLayer/LevelStats as LevelStatUI
 
 var current_level_id: int = 0
 var current_level: Level = null
@@ -17,6 +18,8 @@ func load_level(level_id: int):
 	
 	current_level.win.connect(level_complete)
 	current_level.loss.connect(restart_level)
+	
+	level_title.update_level_title(level_id, current_level.level_name)
 	
 	$SoundtrackHandler.attachPlayer(current_level.player_ref)
 	$SoundtrackHandler.updateLayer(current_level.player_ref.temperature)
@@ -60,6 +63,7 @@ func start_game():
 	main_menu.hide()
 		
 	$Thermometer.show()
+	level_title.show()
 	load_level(current_level_id)
 	
 	$SoundtrackHandler.attachPlayer(current_level.player_ref)
@@ -74,6 +78,7 @@ func start_game():
 func finish_game():
 	current_level_id = level_test_index
 	$Thermometer.hide()
+	level_title.hide()
 	win_screen.show()
 
 func _ready() -> void:
@@ -85,6 +90,7 @@ func _ready() -> void:
 	
 	$Thermometer.hide()
 	win_screen.hide()
+	level_title.hide()
 
 func _on_win_screen_main_menu() -> void:	
 	main_menu.game_started = false
