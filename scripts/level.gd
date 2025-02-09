@@ -29,7 +29,8 @@ enum TileType {
 	ICE,
 	FIRE,
 	SNOWFLAKE,
-	WATER
+	WATER,
+	GOAL
 }
 
 ## Helper Methods
