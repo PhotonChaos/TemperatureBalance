@@ -136,5 +136,7 @@ func handle_tile_effects():
 			player_ref.add_temp(1)
 			level_tilemap.erase_cell(Vector2i(player_cell_x, player_cell_y))
 			hot_pickup.emit()
-			
+		
+		TileType.GOAL:
+			win.emit()
 	

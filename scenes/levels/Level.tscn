@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d3sxfj2xq82x7" path="res://textures/Dirt.png" id="3_c60es"]
 [ext_resource type="Texture2D" uid="uid://sv486du6q603" path="res://textures/Grass.png" id="4_ml36j"]
 [ext_resource type="Texture2D" uid="uid://b7ntsqeifctm0" path="res://textures/Ice.png" id="5_wknhe"]
-[ext_resource type="TileSet" uid="uid://bmn3sy6b1w8dl" path="res://textures/level_player_tiles.tres" id="6_i544d"]
+[ext_resource type="TileSet" uid="uid://bmn3sy6b1w8dl" path="res://textures/Tilesets/level_player_tiles.tres" id="6_i544d"]
 [ext_resource type="Texture2D" uid="uid://bv1udgve7mtgl" path="res://textures/Flame-Sheet.png" id="7_xsd87"]
 [ext_resource type="Texture2D" uid="uid://bixwkbeij6sig" path="res://textures/Snowflake-Sheet.png" id="8_3e0fx"]
 [ext_resource type="Texture2D" uid="uid://c01k88snuy7p4" path="res://textures/Water-Sheet.png" id="9_sy8e0"]
