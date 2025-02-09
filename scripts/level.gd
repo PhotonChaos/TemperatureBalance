@@ -10,6 +10,7 @@ signal cold_pickup
 
 @export var level_name: String
 @export var player_template: PackedScene
+@export var starting_temperature: int = 0
 
 @onready var level_tilemap = $LevelLayer as TileMapLayer
 @onready var player_tilemap = $PlayerLayer as TileMapLayer
@@ -68,6 +69,7 @@ func _ready() -> void:
 	player_ref = player_template.instantiate()
 	add_child(player_ref)
 	
+	player_ref.temperature = starting_temperature
 	player_ref.position = Vector2(player_start.position.x * 16 + 8, player_start.position.y * 16 + 8)
 	player_cell_x = player_start.position.x
 	player_cell_y = player_start.position.y

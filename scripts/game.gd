@@ -78,7 +78,6 @@ func _ready() -> void:
 	$Thermometer.hide()
 	win_screen.hide()
 
-
 func _on_win_screen_main_menu() -> void:	
 	main_menu.game_started = false
 	main_menu.show()
