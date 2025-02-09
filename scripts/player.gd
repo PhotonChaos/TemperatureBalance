@@ -15,10 +15,15 @@ signal debug_win_level
 
 @onready var temperature = start_temp
 
+const MIN_TEMP = -10
+const MAX_TEMP = 10
+
 enum MoveDir { NONE, UP, DOWN, LEFT, RIGHT }
 
 var forced_move: MoveDir = MoveDir.NONE
 var last_move: MoveDir = MoveDir.NONE
+
+var dying: bool = false
 
 # Movement cooldown
 const MAX_COOLDOWN = 0.01
@@ -26,8 +31,12 @@ var cooldown = 0
 
 func add_temp(t: int) -> void:
 	temperature += t
-	print("Temperature ", temperature - t, " -> ", temperature)
 	temp_updated.emit(temperature)
+	
+	if temperature < MIN_TEMP:
+		die("freeze")
+	elif temperature > MAX_TEMP:
+		die("overheat")
 
 func can_move(dir: MoveDir):
 	return forced_move == MoveDir.NONE or forced_move == dir
@@ -38,6 +47,17 @@ func move(xdst, ydst):
 	position.y += ydst
 	moved.emit()
 
+func die(anim: String = ""):
+	dying = true
+	
+	if anim not in ["freeze", "overheat", "drown"]:
+		retry.emit()
+	else:
+		position.y -= 4
+		play(anim)
+
+func _ready() -> void:
+	play("spawn")
 
 func _process(delta: float) -> void:
 	cooldown -= delta
@@ -61,11 +81,11 @@ func _process(delta: float) -> void:
 				iev.action = "move_right"
 			
 		Input.parse_input_event(iev)
-		
+
 
 func _input(event: InputEvent) -> void:
-	# Don't accept input if we're on cooldown, or if ice is shoving us
-	if cooldown > 0:
+	# Don't accept input if we're on cooldown, or if we are dying
+	if cooldown > 0 or dying:
 		return
 		
 	if event.is_action_pressed("move_up") and can_move(MoveDir.UP):
@@ -85,7 +105,7 @@ func _input(event: InputEvent) -> void:
 		last_move = MoveDir.RIGHT
 		request_move.emit(1, 0)
 	elif event.is_action_pressed("retry"):
-		retry.emit()
+		die()
 	elif event.is_action_pressed("debug_win_level"):
 		debug_win_level.emit()
 	elif event.is_action_pressed("debug_add_temp"):
@@ -96,3 +116,11 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	cooldown += MAX_COOLDOWN
+
+func _on_animation_finished() -> void:
+	match animation:
+		"spawn":
+			play("default")
+		
+		"drown", "freeze", "overheat":
+			retry.emit()
