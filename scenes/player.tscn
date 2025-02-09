@@ -1,8 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cvduu42wfa3t4"]
 
-[ext_resource type="Texture2D" uid="uid://cj4o2hd0i8dyg" path="res://textures/LittleGuy.png" id="1_u4kb8"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="2_jt8wu"]
 
-[node name="Player" type="Sprite2D"]
-texture = ExtResource("1_u4kb8")
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqsod"]
+
+[node name="Player" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_nqsod")
 script = ExtResource("2_jt8wu")

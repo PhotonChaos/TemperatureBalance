@@ -1,5 +1,5 @@
 class_name Player
-extends Sprite2D
+extends AnimatedSprite2D
 
 signal temp_updated(new_temp)
 
