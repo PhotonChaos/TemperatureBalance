@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dr8nqg74dw7ab"]
+[gd_scene load_steps=39 format=3 uid="uid://dr8nqg74dw7ab"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_yeod1"]
 [ext_resource type="PackedScene" uid="uid://ce47jnwu70pcx" path="res://scenes/levels/Level.tscn" id="2_bh3j1"]
@@ -25,9 +25,78 @@
 [ext_resource type="AudioStream" uid="uid://bk3wydsiedryw" path="res://audio/effects/Evaporate.wav" id="21_fs8h1"]
 [ext_resource type="Theme" uid="uid://coo5bwre2dob0" path="res://main_theme.tres" id="23_5yikk"]
 [ext_resource type="Script" path="res://scripts/level_stats.gd" id="24_pqpeu"]
+[ext_resource type="Texture2D" uid="uid://lan4vdrweiid" path="res://textures/UI/SteamIcon-Sheet.png" id="26_erw34"]
+[ext_resource type="Texture2D" uid="uid://cq4hx86kmjolt" path="res://textures/UI/IceCubeMelting-Sheet.png" id="26_toomn"]
+[ext_resource type="Texture2D" uid="uid://8vkk7efxs3l1" path="res://textures/UI/IceCubeFreezing-Sheet.png" id="27_vv8ik"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_axt1d"]
 font_size = 11
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8f4s"]
+atlas = ExtResource("26_erw34")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bh2gx"]
+atlas = ExtResource("26_erw34")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvahb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8f4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bh2gx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfkkf"]
+atlas = ExtResource("26_toomn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol2to"]
+atlas = ExtResource("26_toomn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3eebf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfkkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol2to")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jndhx"]
+atlas = ExtResource("27_vv8ik")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esybr"]
+atlas = ExtResource("27_vv8ik")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxotj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jndhx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esybr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
 
 [node name="MainGame" type="Node2D"]
 script = ExtResource("1_yeod1")
@@ -97,6 +166,22 @@ grow_vertical = 0
 text = "LEVEL X: Main menu"
 label_settings = SubResource("LabelSettings_axt1d")
 vertical_alignment = 1
+
+[node name="Steam" type="AnimatedSprite2D" parent="."]
+position = Vector2(441, 359)
+sprite_frames = SubResource("SpriteFrames_uvahb")
+frame = 1
+frame_progress = 0.69481
+
+[node name="Melt" type="AnimatedSprite2D" parent="."]
+position = Vector2(424, 360)
+sprite_frames = SubResource("SpriteFrames_3eebf")
+
+[node name="Freeze" type="AnimatedSprite2D" parent="."]
+position = Vector2(424, 360)
+sprite_frames = SubResource("SpriteFrames_sxotj")
+frame = 1
+frame_progress = 0.418776
 
 [connection signal="start_game" from="MenuLayer/MainMenu" to="." method="start_game"]
 [connection signal="main_menu" from="WinScreenLayer/WinScreen" to="." method="_on_win_screen_main_menu"]

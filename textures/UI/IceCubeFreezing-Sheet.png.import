@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lan4vdrweiid"
-path="res://.godot/imported/SteamIcon-Sheet.png-bd6ffa812d69fa2628c88a2a1d7dc692.ctex"
+uid="uid://8vkk7efxs3l1"
+path="res://.godot/imported/IceCubeFreezing-Sheet.png-4dbc9e281b3ac35b307b27444dd8006e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/SteamIcon-Sheet.png"
-dest_files=["res://.godot/imported/SteamIcon-Sheet.png-bd6ffa812d69fa2628c88a2a1d7dc692.ctex"]
+source_file="res://textures/UI/IceCubeFreezing-Sheet.png"
+dest_files=["res://.godot/imported/IceCubeFreezing-Sheet.png-4dbc9e281b3ac35b307b27444dd8006e.ctex"]
 
 [params]
 
