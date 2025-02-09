@@ -8,10 +8,12 @@ signal freeze
 signal steam
 signal hot_pickup
 signal cold_pickup
+signal battery_pickup(num_collected: int)
 
 @export var level_name: String
 @export var player_template: PackedScene
 @export var starting_temperature: int = 0
+@export var batteries_needed: int = 1
 
 @onready var level_tilemap = $LevelLayer as TileMapLayer
 @onready var player_tilemap = $PlayerLayer as TileMapLayer
@@ -21,6 +23,8 @@ var player_ref: Player
 
 var player_cell_x = 0
 var player_cell_y = 0
+
+var batteries_collected: int = 0
 
 # These should  be in the same order as the tiles in the level TileSet
 enum TileType {
@@ -146,5 +150,10 @@ func handle_tile_effects():
 			hot_pickup.emit()
 		
 		TileType.GOAL:
-			win.emit()
+			batteries_collected += 1
+			
+			if batteries_collected >= batteries_needed:
+				win.emit()
+			else:
+				battery_pickup.emit(batteries_collected)
 	
