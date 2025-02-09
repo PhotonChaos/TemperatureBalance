@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cds0orccvsin4"]
+
+[ext_resource type="Texture2D" uid="uid://dnw7k7633cume" path="res://textures/SteamPoof-Sheet.png" id="1_qmk2y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spt8j"]
+atlas = ExtResource("1_qmk2y")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ny1p"]
+atlas = ExtResource("1_qmk2y")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e5mfx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spt8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ny1p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Steam" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_e5mfx")
+frame_progress = 0.799675

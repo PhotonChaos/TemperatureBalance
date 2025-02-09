@@ -11,6 +11,8 @@ signal cold_pickup
 signal battery_pickup(num_collected: int)
 signal battery_sfx
 
+
+
 @export var level_name: String
 @export var player_template: PackedScene
 @export var starting_temperature: int = 0
@@ -18,6 +20,7 @@ signal battery_sfx
 
 @onready var level_tilemap = $LevelLayer as TileMapLayer
 @onready var player_tilemap = $PlayerLayer as TileMapLayer
+@onready var steam_template: PackedScene = preload("res://scenes/Steam.tscn")
 
 # This is set on level startup by reading the tilemap
 var player_ref: Player
@@ -123,6 +126,18 @@ func handle_tile_effects():
 				player_ref.add_temp(-2)
 				set_tile(player_cell_x, player_cell_y, TileType.AIR)
 				steam.emit()
+				
+				var steam: AnimatedSprite2D = steam_template.instantiate() as AnimatedSprite2D
+				var delete_steam = func():
+					remove_child(steam)
+					steam.queue_free()
+					
+				add_child(steam)
+				steam.position = player_ref.position
+				steam.z_index = 2
+				steam.play("default")
+				steam.animation_finished.connect(delete_steam)
+				
 			else:
 				# Player sinks if they aren't cold enough
 				player_ref.die("drown")
