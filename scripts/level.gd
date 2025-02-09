@@ -5,6 +5,7 @@ signal win
 signal loss
 signal melt
 signal freeze
+signal steam
 signal hot_pickup
 signal cold_pickup
 
@@ -113,6 +114,10 @@ func handle_tile_effects():
 				player_ref.add_temp(1)
 				set_tile(player_cell_x, player_cell_y, TileType.ICE)
 				freeze.emit()
+			elif player_ref.temperature >= 2:
+				player_ref.add_temp(-2)
+				set_tile(player_cell_x, player_cell_y, TileType.AIR)
+				steam.emit()
 			else:
 				# Player sinks if they aren't cold enough
 				player_ref.die("drown")
