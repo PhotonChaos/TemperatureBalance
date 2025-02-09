@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://fmwtukmj00o0" path="res://textures/Tilesets/level_tiles.tres" id="3_48low"]
 [ext_resource type="TileSet" uid="uid://bmn3sy6b1w8dl" path="res://textures/Tilesets/level_player_tiles.tres" id="10_rs0wa"]
 
-[node name="Level" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource("1_nihf2")
 player_template = ExtResource("2_23ub1")
 

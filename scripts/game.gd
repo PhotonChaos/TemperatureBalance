@@ -25,6 +25,7 @@ func load_level(level_id: int):
 	$HotPickupSfxHandler.attach_signal(current_level.hot_pickup)
 	$ColdPickupSfxHandler.attach_signal(current_level.cold_pickup)
 	$FreezeSfxHandler.attach_signal(current_level.freeze)
+	$LevelCompleteSfxHandler.attach_signal(current_level.win)
 
 func unload_level():
 	remove_child(current_level)
