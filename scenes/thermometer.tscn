@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b6ddgo4t5iycf"]
+[gd_scene load_steps=30 format=3 uid="uid://caa2futy5kh05"]
 
 [ext_resource type="Texture2D" uid="uid://6k2r43wy4eqn" path="res://textures/Thermometer-Sheet.png" id="1_ou87t"]
 [ext_resource type="Script" path="res://scripts/thermometer.gd" id="2_x7ln5"]
